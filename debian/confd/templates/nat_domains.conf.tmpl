@@ -1,0 +1,6 @@
+#!/bin/sh
+VIA="via 172.20.1.1 dev eth1"
+ip route show ${VIA} | awk '{print $1 }' | xargs -L 1 -I '{}' ip route del '{}' ${VIA}
+{{ range getvs "/kuberdock/nat_domains/*" }}
+ip route add {{ . }} ${VIA}
+{{ end }}

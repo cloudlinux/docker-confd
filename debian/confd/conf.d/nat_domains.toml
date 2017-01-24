@@ -1,0 +1,7 @@
+[template]
+src = "nat_domains.conf.tmpl"
+dest = "/bin/route_update.sh"
+keys = [
+    "/kuberdock/nat_domains",
+]
+reload_cmd = "bash /bin/route_update.sh"

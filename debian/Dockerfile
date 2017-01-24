@@ -8,3 +8,4 @@ RUN set -x \
   && wget --no-check-certificate --retry-connrefused -t 5 ${CONFD_URL}/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 -O /bin/confd \
   && chmod +x /bin/confd \
   && apt-get purge -y --auto-remove wget
+COPY confd /etc/confd
